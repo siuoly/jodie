@@ -15,14 +15,14 @@ network=$1
 type=$2
 interaction="interaction"
 
-idx=0
+idx=13
 while [ $idx -le 49 ]
 do
     echo $idx
     if [ $type == "$interaction" ]; then
-	python2.7 evaluate_interaction_prediction.py --network $network --model jodie --epoch ${idx}
+	python evaluate_interaction_prediction.py --network $network --model jodie --epoch ${idx}
     else
-	python2.7 evaluate_state_change_prediction.py --network $network --model jodie --epoch ${idx}
+	python evaluate_state_change_prediction.py --network $network --model jodie --epoch ${idx}
     fi
     (( idx+=1 ))
 done 

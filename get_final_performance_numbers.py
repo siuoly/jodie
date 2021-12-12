@@ -35,8 +35,9 @@ if val != []:
     validation_performances.append(val)
     test_performances.append(test)
 
-validation_performances = np.array(validation_performances)
-test_performances = np.array(test_performances)
+validation_performances = np.array(validation_performances,dtype=object)
+print(validation_performances)
+test_performances = np.array(test_performances,dtype=object)
 
 if "interaction" in fname:
     metrics = ['Mean Reciprocal Rank', 'Recall@10']
@@ -47,9 +48,9 @@ print('\n\n*** For file: %s ***' % fname)
 best_val_idx = np.argmax(validation_performances[:,1])
 print("Best validation epoch: %d" % best_val_idx)
 print('\n\n*** Best validation performance (epoch %d) ***' % best_val_idx)
-for i in xrange(len(metrics)):
+for i in range(len(metrics)):
     print(metrics[i] + ': ' + str(validation_performances[best_val_idx][i+1]))
 
 print('\n\n*** Final model performance on the test set, i.e., in epoch %d ***' % best_val_idx)
-for i in xrange(len(metrics)):
+for i in range(len(metrics)):
     print(metrics[i] + ': ' + str(test_performances[best_val_idx][i+1]))

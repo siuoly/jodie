@@ -220,13 +220,13 @@ metrics = ['Mean Reciprocal Rank', 'Recall@10']
 
 print('\n\n*** Validation performance of epoch %d ***' % args.epoch)
 fw.write('\n\n*** Validation performance of epoch %d ***\n' % args.epoch)
-for i in xrange(len(metrics)):
+for i in range(len(metrics)):
     print(metrics[i] + ': ' + str(performance_dict['validation'][i]))
     fw.write("Validation: " + metrics[i] + ': ' + str(performance_dict['validation'][i]) + "\n")
     
 print('\n\n*** Test performance of epoch %d ***' % args.epoch)
 fw.write('\n\n*** Test performance of epoch %d ***\n' % args.epoch)
-for i in xrange(len(metrics)):
+for i in range(len(metrics)):
     print(metrics[i] + ': ' + str(performance_dict['test'][i]))
     fw.write("Test: " + metrics[i] + ': ' + str(performance_dict['test'][i]) + "\n")
 
