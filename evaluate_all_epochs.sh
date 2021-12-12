@@ -15,7 +15,7 @@ network=$1
 type=$2
 interaction="interaction"
 
-idx=13
+idx=0
 while [ $idx -le 49 ]
 do
     echo $idx
